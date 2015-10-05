@@ -10,7 +10,6 @@ body {
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
-
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
@@ -32,7 +31,6 @@ body {
 .navbar-wrapper .navbar .container {
   width: auto;
 }
-
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -60,19 +58,23 @@ body {
   height: 500px;
 }
 
+.outline {
+    color: #000;
+    text-shadow: #000 0px 0px 10px;
+    -webkit-font-smoothing: antialiased;
+}
 
-/* MARKETING CONTENT
+/* ABOUT CONTENT
 -------------------------------------------------- */
-
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.about .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
 }
-.marketing h2 {
+.about h2 {
   font-weight: normal;
 }
-.marketing .col-lg-4 p {
+.about .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -127,6 +129,9 @@ body {
   }
 }
 
+.portfolio {
+  margin-top: 20px;
+}
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;

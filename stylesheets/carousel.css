@@ -7,7 +7,6 @@ body {
   color: #5a5a5a;
 }
 
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
@@ -38,31 +37,25 @@ body {
 /* Carousel base class */
 .carousel {
   height: 500px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
+  font-size: 5em;
+  text-shadow: #000 0px 0px 50px;
   z-index: 10;
 }
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
+.carousel img {
+  z-index: -100;
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
+  width: 100%;
+  height: auto;
 }
 
-.outline {
-    color: #000;
-    text-shadow: #000 0px 0px 10px;
-    -webkit-font-smoothing: antialiased;
-}
 
 /* ABOUT CONTENT
 -------------------------------------------------- */
@@ -72,7 +65,9 @@ body {
   text-align: center;
 }
 .about h2 {
-  font-weight: normal;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: #000 0px 0px 50px;
 }
 .about .col-lg-4 p {
   margin-right: 10px;

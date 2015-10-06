@@ -128,10 +128,15 @@ body {
     font-size: 50px;
   }
 }
-
+/* For Portofolio items */
 .portfolio {
   margin-top: 20px;
+  padding: 10px;
 }
+.portfolio img {
+  width: 50%;
+}
+
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;

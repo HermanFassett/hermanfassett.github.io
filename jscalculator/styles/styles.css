@@ -1,0 +1,44 @@
+body {
+  position: relative;
+}
+.main {
+  width: 200px;
+  height: 250px;
+  overflow-y: auto;
+}
+.display {
+
+}
+.function-buttons {
+  width: 450px;
+  background: #000;
+  overflow-y: auto;
+}
+
+.main-buttons1 {
+  width: 150px;
+  background: #000;
+  overflow-y: auto;
+  float: left;
+}
+.main-buttons2 {
+  width: 50px;
+  overflow-y: auto;
+  float: right;
+}
+.btn {
+  float: left;
+  background: lightgray;
+}
+.btn-1x1 {
+  width: 50px;
+  height: 50px;
+}
+.btn-2x1 {
+  width: 100px;
+  height: 50px;
+}
+.btn-1x2 {
+  width: 50px;
+  height: 100px;
+}

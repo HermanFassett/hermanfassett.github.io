@@ -6,8 +6,12 @@ body {
   font-size: 28px;
   font-family: "Patua One", Arial, serif; font-weight: 400;
 }
+.outside {
+  position: relative;
+  text-align: center;
+}
 .main {
-  position:relative;
+  margin: 0 auto;
   background-color: #635D5C;
   width: 200px;
   height: auto;

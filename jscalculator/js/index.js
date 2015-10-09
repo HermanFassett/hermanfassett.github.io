@@ -17,7 +17,7 @@ $(document).ready(function(){
       $("#display").text("");
       calculated = false;
     }
-    if ($("#display").text().length < 8) {
+    if ($("#display").text().replace(".","").length < 8) {
       $("#display").text($("#display").text() + $(e).text());
       expression += $(e).text();
     }
@@ -68,30 +68,43 @@ $(document).ready(function(){
       case 98:
         $("#btn2").click();
         break;
+      // 3
       case 51:
       case 99:
         $("#btn3").click();
         break;
+      // 4
       case 52:
       case 100:
         $("#btn4").click();
         break;
+      // 5
       case 53:
       case 101:
         $("#btn5").click();
         break;
+      // 6
       case 54:
       case 102:
         $("#btn6").click();
         break;
+      // 7
       case 55:
       case 103:
         $("#btn7").click();
         break;
+      // 8 and mult
       case 56:
+        if (!e.shiftKey)
+          $("#btn8").click();
+        else
+          $("#btnMult").click();
+        break;
+      // 8
       case 104:
         $("#btn8").click();
         break;
+      // 9
       case 57:
       case 105:
         $("#btn9").click();
@@ -108,7 +121,7 @@ $(document).ready(function(){
       // + key
       case 187:
       case 107:
-        $("#btnPlus").click();
+        $("#btnAdd").click();
         break;
       // - key
       case 189:
@@ -118,10 +131,6 @@ $(document).ready(function(){
       // * key
       case 107:
         $("#btnMult").click();
-        break;
-      case 56:
-        if (e.shiftKey)
-          $("#btnMult").click();
         break;
       // / key
       case 111:

@@ -1,20 +1,55 @@
-
+var expression = "";
+var calculated = false;
 $(document).ready(function(){
+  function funcClick(e) {
+    var i = expression.charAt(expression.length - 1);
+    if (i != "+" && i != "-" && i != "/" && i != "*") {
+      if (calculated) {
+        expression = $("#display").text();
+      }
+      calculated = true;
+      expression += $(e).text();
+      $("#display").text($(e).text());
+    }
+  }
   function btnClick(e) {
-    $("#display").text($("#display").text() + $(e).text());
+    if (calculated || $("#display").text() === "0") {
+      $("#display").text("");
+      calculated = false;
+    }
+    if ($("#display").text().length < 8) {
+      $("#display").text($("#display").text() + $(e).text());
+      expression += $(e).text();
+    }
   }
   $("#btn0,#btn1,#btn2,#btn3,#btn4,#btn5,#btn6,#btn7,#btn8,#btn9").click(function(){
     btnClick(this)
   });
-  $("#btnEqual").click(function() {alert("hi");});
-  $("#btnDot").click(function(){});
-  $("#btnAdd").click(function(){});
-  $("#btnMinus").click(function(){});
+  $("#btnEqual").click(function() {
+    $("#display").text(eval(expression));
+    calculated = true;
+    expression = "";
+  });
+  $("#btnDot").click(function(){
+    if (!$("#display").text().includes("."))
+      btnClick(this);
+  });
+  $("#btnAdd").click(function(){
+    funcClick(this);
+  });
+  $("#btnMinus").click(function(){
+    funcClick(this);
+  });
+  $("#btnDiv").click(function(){
+    funcClick(this);
+  });
+  $("#btnMult").click(function(){
+    funcClick(this);
+  });
   $("#btnC").click(function(){
     $("#display").text("0");
+    expression = "";
   })
-  $("#btnDiv").click(function(){});
-  $("#btnMult").click(function(){});
   $(document).keyup(function(e) {
     var key = String.fromCharCode(e.keyCode);
     switch(e.which) {

@@ -1,3 +1,6 @@
+@font-face {
+   font-family: Digital;
+   src: url("../fonts/Digital.ttf"); }
 body {
   background-color: #233329;
   font-size: 28px;
@@ -14,8 +17,9 @@ body {
   overflow-y: auto;
 }
 .display {
-  font-size: 40px;
-  text-shadow: 2px 2px #233329;
+  font-family: Digital;
+  font-size: 45px;
+  text-shadow: 2px 2px #000;
   text-align: right;
   color: #9B9B93;
   background-color: #353531;
@@ -25,8 +29,7 @@ body {
   margin-top: 0px;
   border-width: thick;
   border-style: ridge;
-  overflow-x: auto;
-  direction: rtl;
+  overflow-x: hidden;
 }
 .function-buttons {
   width: 450px;

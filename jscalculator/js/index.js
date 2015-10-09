@@ -3,7 +3,8 @@ var calculated = false;
 $(document).ready(function(){
   function funcClick(e) {
     var i = expression.charAt(expression.length - 1);
-    if (i != "+" && i != "-" && i != "/" && i != "*") {
+    var j = $("#display").text();
+    if (i != "+" && i != "-" && i != "/" && i != "*" && j != "" && j != "0") {
       if (calculated) {
         expression = $("#display").text();
       }

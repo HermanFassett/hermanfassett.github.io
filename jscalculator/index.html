@@ -1,37 +1,40 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet" type="text/css">
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="main">
-      <div class="display">
+      <div id="display" class="display">
+        0
       </div>
       <div class="function-buttons">
       </div>
       <div class="main-buttons1">
-        <button class="btn btn-1x1">Clear</button>
-        <button class="btn btn-1x1">/</button>
-        <button class="btn btn-1x1">*</button>
-        <button class="btn btn-1x1">7</button>
-        <button class="btn btn-1x1">8</button>
-        <button class="btn btn-1x1">9</button>
-        <button class="btn btn-1x1">4</button>
-        <button class="btn btn-1x1">5</button>
-        <button class="btn btn-1x1">6</button>
-        <button class="btn btn-1x1">1</button>
-        <button class="btn btn-1x1">2</button>
-        <button class="btn btn-1x1">3</button>
-        <button class="btn btn-2x1">0</button>
-        <button class="btn btn-1x1">.</button>
+        <button id="btnC" class="btn btn-1x1">C</button>
+        <button id="btnDiv" class="btn btn-1x1">/</button>
+        <button id="btnMult" class="btn btn-1x1">*</button>
+        <button id="btn7" class="btn btn-1x1">7</button>
+        <button id="btn8" class="btn btn-1x1">8</button>
+        <button id="btn9" class="btn btn-1x1">9</button>
+        <button id="btn4" class="btn btn-1x1">4</button>
+        <button id="btn5" class="btn btn-1x1">5</button>
+        <button id="btn6" class="btn btn-1x1">6</button>
+        <button id="btn1" class="btn btn-1x1">1</button>
+        <button id="btn2" class="btn btn-1x1">2</button>
+        <button id="btn3" class="btn btn-1x1">3</button>
+        <button id="btn0" class="btn btn-2x1">0</button>
+        <button id="btnDot" class="btn btn-1x1">.</button>
       </div>
       <div class="main-buttons2">
-        <button class="btn btn-1x1">-</button>
-        <button class="btn btn-1x2">+</button>
-        <button class="btn btn-1x2">Enter</button>
+        <button id="btnMinus" class="btn btn-1x1">-</button>
+        <button id="btnAdd" class="btn btn-1x2">+</button>
+        <button id="btnEqual" class="btn btn-1x2">=</button>
       </div>
     </div>
-    <script type="text/javascript" src="js/index.js"></script>
+    <!--JQuery reference must come first-->
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>

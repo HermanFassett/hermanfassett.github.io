@@ -1,34 +1,64 @@
 body {
-  position: relative;
+  background-color: #233329;
+  font-size: 28px;
+  font-family: "Patua One", Arial, serif; font-weight: 400;
 }
 .main {
+  position:relative;
+  background-color: #635D5C;
   width: 200px;
-  height: 250px;
+  height: auto;
+  border-radius: 10px;
+  border-style: outset;
+  border-width: 10px;
   overflow-y: auto;
 }
 .display {
-
+  font-size: 40px;
+  text-shadow: 2px 2px #233329;
+  text-align: right;
+  color: #9B9B93;
+  background-color: #353531;
+  width: auto;
+  height: 75px;
+  margin-top: 0px;
+  border-width: thick;
+  border-style: ridge;
 }
 .function-buttons {
   width: 450px;
-  background: #000;
+  background-color: #000;
   overflow-y: auto;
 }
 
 .main-buttons1 {
   width: 150px;
-  background: #000;
   overflow-y: auto;
   float: left;
 }
 .main-buttons2 {
   width: 50px;
   overflow-y: auto;
-  float: right;
+  float: left;
 }
 .btn {
+  background-image: -webkit-linear-gradient(top, #635D5C, #9B9B93);
+  background-image: -moz-linear-gradient(top, #635D5C, #9B9B93);
+  background-image: -ms-linear-gradient(top, #635D5C, #9B9B93);
+  background-image: -o-linear-gradient(top, #635D5C, #9B9B93);
+  background-image: linear-gradient(to bottom, #635D5C, #9B9B93);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-size: inherit;
   float: left;
-  background: lightgray;
+  background-color: inherit;
+  font-family: "Patua One", Arial, serif; font-weight: 400;
+  color: #233329;
+  border-radius: 5px;
+}
+.btn:active {
+  background-color: #BCA371;
 }
 .btn-1x1 {
   width: 50px;

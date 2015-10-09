@@ -20,10 +20,13 @@ body {
   color: #9B9B93;
   background-color: #353531;
   width: auto;
-  height: 60px;
+  min-height: 50px;
+  height: auto;
   margin-top: 0px;
   border-width: thick;
   border-style: ridge;
+  overflow-x: auto;
+  direction: rtl;
 }
 .function-buttons {
   width: 450px;

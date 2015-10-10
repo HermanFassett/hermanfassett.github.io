@@ -1,21 +1,16 @@
 const APPID = "dj0yJmk9QzJjTXdWc2l1TmhBJmQ9WVdrOVRHMDFaM2RPTjJNbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0zMA--"
 var deg = "f";
-var lat, lon, loc, wind, temp, desc, city;
+var lat, lon, loc, wind, temp, desc, city, units;
 var sunset = 0, sunrise = 0;
 $(document).ready(function() {
   // Get location
   if (navigator.geolocation)
 	   navigator.geolocation.getCurrentPosition(getLocation, getIP);
   else getIP();
-  // Determine graphics
-  var now = new Date();
-  if (now.getHours() < sunset || now.getHours() > sunrise) {
-    $("#orb").removeClass("sun").addClass("moon");
-    $("body").css("background-color", "#382B45");
-  }
 });
 function setLocation() {
-  $("#loc").text(loc + ", Lat: " + lat + ", Lon: " + lon);
+  $("#address").text(loc);
+  $("#latlon").text("Lat: " + lat + ", Lon: " + lon);
   getWeather();
 }
 function getLocation(location) {
@@ -30,9 +25,9 @@ function getLocation(location) {
 
 function getIP() {
   $.getJSON("http://ipinfo.io", function(response) {
-    var loc = response.loc.split(",");
-    lat = loc[0], lon = loc[1], city = response.city;
-    this.loc = response.city + ", " + response.region + ", " + response.country;
+    var location = response.loc.split(",");
+    lat = location[0], lon = location[1], city = response.city;
+    loc = response.city + ", " + response.region + ", " + response.country;
   }).done(function() {
     setLocation();
   });
@@ -44,8 +39,28 @@ function getWeather(geoid) {
     sunrise = data.astronomy.sunrise, sunset = data.astronomy.sunset;
     wind = data.wind.speed;
     temp = data.item.condition.temp;
-    desc = data.item.condition.text;
+    desc = data.item.forecast[0].text;
+    units = data.units;
   }).done(function() {
-    $("#weather").text(temp + deg + ", " + desc + " - Wind: " + wind);
+    $("#weather").text(temp + units.temperature + ", " + desc);
+    $("#wind").text("Wind " + wind + units.speed);
+    // Determine graphics
+    rise = sunrise.split(":")[0];
+    if (sunrise.charAt(sunrise.length - 2) === "p")
+      rise = parseInt(rise) + 12;
+    set = sunset.split(":")[0];
+    if (sunset.charAt(sunset.length - 2) === "p")
+      set = parseInt(set) + 12;
+    var now = new Date();
+    // Day or Night
+    if (now.getHours() < rise && now.getHours() > set) {
+      $("#orb").removeClass("sun").addClass("moon");
+      $("body").css("background-color", "#382B45");
+    }
+    // If cloudy
+    if (!desc.toLowerCase().includes("cloud"))
+      $("#cloud").hide();
+    if (!desc.toLowerCase().includes("shower") && !desc.toLowerCase().includes("rain"))
+      $("#rain").hide();
   });
 }

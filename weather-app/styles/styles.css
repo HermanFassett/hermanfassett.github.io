@@ -3,6 +3,8 @@ body {
   text-align: center;
   background-color: #40CFFF;
 }
+
+/* Heavenly Body for Time of Day */
 .sun {
   margin: 0 auto;
   width: 100px;
@@ -10,6 +12,7 @@ body {
   border-radius: 50%;
   background-color: yellow;
   box-shadow: 0px 0px 100px yellow;
+  position:relative;
 }
 .moon {
   margin: 0 auto;
@@ -18,7 +21,56 @@ body {
   border-radius: 50%;
   background-color: lightgray;
   box-shadow: 0px 0px 50px white;
+  position: relative;
 }
+
+/* Cloud */
+.cloud {
+  height: 55px;
+  width: 150px;
+  background: white;
+  border-radius: 50px;
+  position: absolute;
+  top: 50px;
+}
+.cloud:before {
+  content: "";
+  height: 55px;
+  width: 45px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  box-sizing: border-box;
+  transform: rotate(40deg);
+}
+.cloud:after {
+  content: "";
+  height: 80px;
+  width: 80px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 60px;
+  box-sizing: border-box;
+  transform: rotate(55deg);
+}
+
+/* Rain */
+.rain {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  background: #91B9C7;
+  position: absolute;
+  left: 100px;
+  top: 75px;
+}
+/* Footer */
 .footer {
   text-decoration: none;
   color: #aaa;

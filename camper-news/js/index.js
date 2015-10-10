@@ -25,10 +25,10 @@ function load() {
     var elem =
     "<div class='news-box'>" +
       "<div class='likes'>+" + likes + "</div>" +
-      "<a href='" + link + "'><img src='" + img +"'></a>" +
+      "<a href='" + link + "' target='_blank'><img src='" + img +"'></a>" +
       "<div class='news-info'>" +
-        "<a class='title' href='" + link + "'><p>" + headline + "</p></a>" +
-        "<a class='author' href='http://freecodecamp.com/" + author + "'>by " + author + "</a>" +
+        "<a class='title' href='" + link + "' target='_blank'><p>" + headline + "</p></a>" +
+        "<a class='author' href='http://freecodecamp.com/" + author + "' target='_blank'>by " + author + "</a>" +
       "</div" +
     "</div>";
     $("#main").append(elem + " ");

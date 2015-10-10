@@ -21,7 +21,7 @@ function setLocation() {
 function getLocation(location) {
   lat = location.coords.latitude, lon = location.coords.longitude;
   $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&sensor=true", function(data) {
-    loc = data[0].formatted_address;
+    loc = data.results.formatted_address;
   }).done(function() {
     setLocation();
   });

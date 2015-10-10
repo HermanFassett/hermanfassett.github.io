@@ -58,7 +58,7 @@ function getWeather(geoid) {
       $("#orb").removeClass("sun").addClass("moon");
       $("body").css("background-color", "#382B45");
     }
-    d = desc.toLowerCase();
+    var d = desc.toLowerCase().toString();
     // If cloudy
     if (!d.includes("cloud"))
       $("#cloud").css("display", "none");

@@ -60,8 +60,8 @@ function getWeather(geoid) {
     }
     // If cloudy
     if (!desc.toLowerCase().includes("cloud"))
-      $("#cloud").hide();
+      $("#cloud").css("display", "none");
     if (!desc.toLowerCase().includes("shower") && !desc.toLowerCase().includes("rain"))
-      $("#rain").hide();
+      $("#rain").css("display", "none");
   });
 }

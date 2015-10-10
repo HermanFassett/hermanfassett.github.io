@@ -58,10 +58,12 @@ function getWeather(geoid) {
       $("#orb").removeClass("sun").addClass("moon");
       $("body").css("background-color", "#382B45");
     }
+    d = desc.toLowerCase();
     // If cloudy
-    if (!desc.toLowerCase().includes("cloud"))
+    if (!d.includes("cloud"))
       $("#cloud").css("display", "none");
-    if (!desc.toLowerCase().includes("shower") && !desc.toLowerCase().includes("rain"))
+    // If rainy
+    if (!d.includes("shower") && !d.includes("rain"))
       $("#rain").css("display", "none");
   });
 }

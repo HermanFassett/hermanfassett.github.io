@@ -17,7 +17,9 @@ function getLocation(location) {
   lat = location.coords.latitude, lon = location.coords.longitude;
   $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&sensor=true", function(data) {
     loc = data.results.formatted_address;
-    city = data.address_components.long_name;
+    lat = data.results.geometry.location.lat;
+    lon = data.results.geometry.location.lng;
+    city = data.results.address_components.formatted_address;
   }).done(function() {
     setLocation();
   });
@@ -44,7 +46,7 @@ function getWeather(geoid) {
   }).done(function() {
     $("#weather").text(temp + units.temperature + ", " + desc);
     $("#wind").text("Wind " + wind + units.speed);
-    // Determine graphics
+    // Determine   graphics
     rise = sunrise.split(":")[0];
     if (sunrise.charAt(sunrise.length - 2) === "p")
       rise = parseInt(rise) + 12;

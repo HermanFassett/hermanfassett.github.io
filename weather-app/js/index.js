@@ -1,6 +1,6 @@
 const APPID = "dj0yJmk9QzJjTXdWc2l1TmhBJmQ9WVdrOVRHMDFaM2RPTjJNbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0zMA--"
 var deg = "f";
-var lat, lon, city, wind, temp, desc;
+var lat, lon, loc, wind, temp, desc;
 var sunset = 0, sunrise = 0;
 $(document).ready(function() {
   // Get location
@@ -15,13 +15,13 @@ $(document).ready(function() {
   }
 });
 function setLocation() {
-  $("#loc").text(city + ", Lat: " + lat + ", Lon: " + lon);
+  $("#loc").text(loc + ", Lat: " + lat + ", Lon: " + lon);
   getWeather();
 }
 function getLocation(location) {
   lat = location.coords.latitude, lon = location.coords.longitude;
   $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&sensor=true", function(data) {
-    console.log(data.results); // EDIT
+    loc = data[0].formatted_address;
   }).done(function() {
     setLocation();
   });
@@ -30,13 +30,13 @@ function getLocation(location) {
 function getIP() {
   $.getJSON("http://ipinfo.io", function(response) {
     var loc = response.loc.split(",");
-    lat = loc[0], lon = loc[1], city = response.city;
+    lat = loc[0], lon = loc[1], loc = response.city;
   }).done(function() {
     setLocation();
   });
 }
 function getWeather(geoid) {
-  var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D'"+ city+"')&format=json&diagnostics=true&callback=";
+  var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D'"+ loc +"')&format=json&diagnostics=true&callback=";
   $.getJSON(url, function(data) {
     data = data.query.results.channel;
     sunrise = data.astronomy.sunrise, sunset = data.astronomy.sunset;

@@ -17,7 +17,7 @@ function getLocation(location) {
   lat = location.coords.latitude, lon = location.coords.longitude;
   $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lon + "&sensor=true", function(data) {
     loc = data.results.formatted_address;
-    lat = data.results.geometry.location.lat;
+    lat = data.results.geometry;
     lon = data.results.geometry.location.lng;
     city = data.results.address_components.formatted_address;
   }).done(function() {

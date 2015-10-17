@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $("#random").click(function() {
+    var url = "https://en.wikipedia.org/w/api.php?action=query&list=random&format=json&callback=?";
+    $.getJSON(url, function(data) {
+      load(data.query.random[0].title);
+    });
+  });
   $("#search-box").keypress(function(e) {
     if (e.which === 13)
       load($("#search-box").val());

@@ -13,7 +13,8 @@ $(document).ready(function() {
         if (history.length === current.length) {
           score += 1;
           $("#display").text(score);
-          setTimeout(getNext, 2000);
+          playing = true;
+          setTimeout(getNext, 1000);
           current = [];
         }
       }
@@ -41,10 +42,7 @@ $(document).ready(function() {
     getNext();
   }
   function clear() {
-    playing = false;
-    history = [];
-    current = [];
-    score = 0;
+    playing = false, history = [], current = [], score = 0;
     $("#display").text("--");
   }
   $("#green").click(function() {

@@ -33,8 +33,9 @@ body {
   cursor: pointer;
   box-shadow:inset 0 0 25px #333;
 }
-.btn:active, .active {
-  box-shadow:inset 0 0 100px #888;
+.active {
+  opacity: 0.9;
+  box-shadow: inset 0 0 250px #aaa;
 }
 .green {
   background: green;

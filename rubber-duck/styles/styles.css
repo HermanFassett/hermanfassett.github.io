@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Acme";
+  src: url("../fonts/Acme-Regular.ttf") format("truetype");
+}
+body {
+  background: #99FFFF;
+  font-family: "Acme";
+  text-align: center;
+}
+div {
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.duck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+}
+.head {
+  width: 200px;
+  height: 180px;
+  background: yellow;
+  position: relative;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 3px solid #dd0;
+}
+.eyes {
+  width:200px;
+  position: absolute;
+  top: 30%;
+  left: -11.5%;
+}
+.eye {
+  width: 55px;
+  height: 55px;
+  background-color: black;
+  border: 10px solid white;
+  display: inline-block;
+  z-index: 3;
+  animation: eyes 5s infinite step-start 0s;
+}
+.eye:last-child {
+  float:right;
+}
+.pupil {
+  width: 1px;
+  height: 1px;
+  border: 5px solid white;
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  margin-left:-10px;
+  z-index: 4;
+  animation: pupil 5s infinite step-start 0s;
+}
+.pupil:last-child{
+  float:right;
+}
+.bill-top {
+	width: 0;
+	height: 0;
+	border-left: 115px solid transparent;
+	border-right: 115px solid transparent;
+	border-bottom: 40px solid orange;
+  position: relative;
+  top: 52%;
+  left: -8%;
+}
+.bill-bottom {
+  height: 70px;
+  width: 180px;
+  border-bottom: 25px solid orange;
+  position: relative;
+  top: 27.5%;
+  left: 5%;
+}
+.body {
+  height: 200px;
+  width: 300px;
+  background: yellow;
+  position: relative;
+  z-index: 0;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  border-top: 3px solid #dd3;
+}
+
+/* Animations */
+@keyframes eyes {
+   0%, 100% {
+    background: #ff6;
+    border-radius: 50%;
+    border: 10px solid yellow;
+  }
+   5%, 95% {
+    background: black;
+    border-radius: 50%;
+    border: 10px solid #fff;
+  }
+}
+@keyframes pupil {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+}

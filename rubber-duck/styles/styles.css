@@ -87,7 +87,10 @@ div {
   left: 50%;
   top: -15px;
   transform: translateX(-50%);
-  border-top: 3px solid #dd3;
+  border-top: 3px solid #ee0;
+  border-bottom: 70px solid #f7f700;
+  border-right: 50px solid #fafa00;
+  border-left: 50px solid #fafa00;
 }
 
 /* Animations */

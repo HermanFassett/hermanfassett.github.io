@@ -19,7 +19,7 @@ body {
 }
 .add-btn {
   position: absolute;
-  top: 8px;
+  top: 8.5px;
   transform: translateX(-28px);
   z-index: 0;
   -webkit-transition: all .2s ease-in-out;

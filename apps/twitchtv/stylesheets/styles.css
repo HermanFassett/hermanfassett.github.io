@@ -1,0 +1,33 @@
+body {
+  background: #DAF5FF;
+  overflow: auto;
+}
+.main {
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+  padding: 10px;
+  z-index: 0;
+}
+#navbar {
+  z-index: 1;
+}
+#users {
+  z-index: 1;
+}
+.add-btn {
+  position: absolute;
+  top: 10px;
+  transform: translateX(-28px);
+  z-index: 0;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+.add-btn:hover {
+  -webkit-transform: translate(-4em,0);
+  -moz-transform: translate(-4em,0);
+  -o-transform: translate(-4em,0);
+  -ms-transform: translate(-4em,0);
+}

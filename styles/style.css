@@ -1,0 +1,112 @@
+/* Body Styles */
+body {
+    background: #85B092;
+    font-family: "Basic";
+    overflow: hidden;
+}
+.background-img {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+/* Main Container */
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+}
+
+/* Circle */
+.circle {
+    background: gray;
+    z-index: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    border: 20px solid black;
+    padding: 10px;
+    box-shadow: 0 0 15px black;
+}
+.circle:hover, .circle:active {
+    z-index: 1;
+    -webkit-transform: scale(1.5) rotate(360deg);
+    -moz-transform: scale(1.5) rotate(360deg);
+    -ms-transform: scale(1.5) rotate(360deg);
+    -o-transform: scale(1.5) rotate(360deg);
+    transform: scale(1.5) rotate(360deg);
+}
+.circle:hover > .title, circle:active > .title {
+    top: 25%;
+    text-shadow: 0 0 15px #000;
+}
+.circle:hover > .info, circle:active > .title {
+    display: block;
+}
+
+/* About Circle */
+.main-circle {
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    border-color: black;
+    background: #BABF95;
+}
+
+/* Music Circle */
+.music-circle {
+    position: relative;
+    left: 0px;
+    top: 150px;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    border-color: blue;
+    background: #EED691;
+}
+
+/* Coder Circle */
+.coder-circle {
+    position: relative;
+    left: 100px;
+    top: -150px;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    border-color: green;
+    background: #2F394D;
+}
+
+/* Circle Title */
+.title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+    text-align: center;
+}
+
+/* Circle Info */
+.info {
+    display: none;
+    position:relative;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* No Text Select */
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

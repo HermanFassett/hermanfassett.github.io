@@ -1,0 +1,45 @@
+body {
+  background: rgb(90, 90, 90);
+}
+
+h1 {
+  text-align: center;
+  font-family: Pacifico, Sans-Serif;
+}
+
+p {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Sans-Serif;
+  width: 50%;
+}
+
+#btn-new {
+  font-family: Pacifico, Sans-Serif;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: green;
+}
+
+#quote-container {
+  min-width: 200px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  box-shadow: 10px 10px 15px #888888;
+  border-radius: 25px;
+}
+
+#quote {
+  width: 100%;
+  font-size: 20px;
+}
+
+#author {
+  width: 100%;
+  font-style: italic;
+  text-align: right;
+}

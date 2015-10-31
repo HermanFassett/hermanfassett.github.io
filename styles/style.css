@@ -68,7 +68,7 @@ body {
   z-index: 0;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform .2s ease-in-out;
+  transition: transform .5s ease-in-out;
   border: 20px solid black;
   padding: 10px;
   box-shadow: 0 0 15px black;
@@ -107,11 +107,11 @@ body {
 }
 .circle:hover > .square, .circle:active > .square {
   opacity: 1;
-  -webkit-transition: opacity 1s ease-out;
-  -moz-transition: opacity 1s ease-out;
-  -ms-transition: opacity 1s ease-out;
-  -o-transition: opacity 1s ease-out;
-  transition: opacity 1s ease-out;
+  -webkit-transition: opacity 2s ease-out;
+  -moz-transition: opacity 2s ease-out;
+  -ms-transition: opacity 2s ease-out;
+  -o-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
   pointer-events: all;
 }
 

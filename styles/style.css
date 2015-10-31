@@ -4,6 +4,8 @@ body {
   font-family: "Basic";
   overflow: hidden;
 }
+
+/* Background Image */
 .background-img {
   min-height: 100%;
   min-width: 1024px;
@@ -15,6 +17,7 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0.2;
 }
+
 /* Main Container */
 .main {
   position: absolute;
@@ -27,6 +30,7 @@ body {
 
 /* Square */
 .square {
+  pointer-events: none;
   border: 2px solid black;
   position: absolute;
   opacity: 0;
@@ -37,14 +41,7 @@ body {
   z-index: -2;
 }
 .square:hover, .square:active {
-  opacity: 1;
   z-index: 1;
-}
-.square > img {
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
 }
 
 /* Square Positions */
@@ -64,6 +61,7 @@ body {
   top: 125px;
   left: 125px
 }
+
 /* Circle */
 .circle {
   background: gray;
@@ -114,7 +112,9 @@ body {
   -ms-transition: opacity 1s ease-out;
   -o-transition: opacity 1s ease-out;
   transition: opacity 1s ease-out;
+  pointer-events: all;
 }
+
 /* About Circle */
 .main-circle {
   z-index: 0;

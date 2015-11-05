@@ -1,7 +1,7 @@
 $(document).ready(function() {
   function load() {
     $.ajax({
-      url: "../audio",
+      url: "/audio",
       success: function (data) {
         console.log(data);
       }

@@ -40,7 +40,7 @@ $(document).ready(function() {
   load();
   resize();
   function frames(){
-  	window.requestAnimationFrame(frameLooper);
+  	window.requestAnimationFrame(frames);
   	freq = new Uint8Array(analyser.frequencyBinCount);
   	analyser.getByteFrequencyData(freq);
     $(".ball").css("transform", "translate(-50%, -50%) scale(" + (freq[0]/100 + 1) + ")");

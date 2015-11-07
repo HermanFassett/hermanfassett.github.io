@@ -13,13 +13,14 @@ $(document).ready(function() {
   $(document).on("click", ".list-item", function() {
     ctx = new AudioContext();
     audio = new Audio("./audio/" + $(this).text() + ".mp3");
+    audio.pause();
     audioSrc = ctx.createMediaElementSource(audio);
     analyser = ctx.createAnalyser();
     audioSrc.connect(analyser);
     analyser.connect(ctx.destination);
     $(".player").css("display", "block");
     audio.play();
-    frameLooper();
+    frames();
   });
   $(".ball").click(function() {
     (audio.paused) ? audio.play() : audio.pause();
@@ -31,13 +32,17 @@ $(document).ready(function() {
     $(".list").css("height", ($(window).height() - 25) + "px");
     $(".list-item").css("width", ($(".list-item").parent().width()/2 - 10) + "px");
   }
+  $(".close").click(function() {
+    $(".player").css("display", "none");
+    audio.pause();
+  });
   $(window).on("resize" ,function() {resize()});
   load();
   resize();
-  function frameLooper(){
+  function frames(){
   	window.requestAnimationFrame(frameLooper);
-  	fbc_array = new Uint8Array(analyser.frequencyBinCount);
-  	analyser.getByteFrequencyData(fbc_array);
-    $(".ball").css("transform", "translate(-50%, -50%) scale(" + (fbc_array[0]/100 + 1) + ")");
+  	freq = new Uint8Array(analyser.frequencyBinCount);
+  	analyser.getByteFrequencyData(freq);
+    $(".ball").css("transform", "translate(-50%, -50%) scale(" + (freq[0]/100 + 1) + ")");
   }
 });

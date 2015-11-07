@@ -70,3 +70,10 @@ body {
 a {
   text-decoration: none;
 }
+.close {
+  font-size: 25px;
+  font-family: fantasy;
+  position: absolute;
+  left: 95%;
+  cursor: pointer;
+}

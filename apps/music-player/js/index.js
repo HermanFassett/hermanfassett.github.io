@@ -35,9 +35,10 @@ $(document).ready(function() {
   load();
   resize();
   function frameLooper(){
-  	window.webkitRequestAnimationFrame(frameLooper);
+  	window.requestAnimationFrame(frameLooper);
   	fbc_array = new Uint8Array(analyser.frequencyBinCount);
   	analyser.getByteFrequencyData(fbc_array);
-    $(".ball").css("transform", "scale(1.4)");
+    console.log(fbc_array);
+    $(".ball").css("transform", "scale(" + fbc_array[0] + ")");
   }
 });

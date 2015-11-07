@@ -11,10 +11,10 @@ $(document).ready(function() {
   }
   var ctx, analyser, audioSrc;
   $(document).on("click", ".list-item", function() {
-    var ctx = new AudioContext();
+    ctx = new AudioContext();
     audio = new Audio("./audio/" + $(this).text() + ".mp3");
-    var audioSrc = ctx.createMediaElementSource(audio);
-    var analyser = ctx.createAnalyser();
+    audioSrc = ctx.createMediaElementSource(audio);
+    analyser = ctx.createAnalyser();
     audioSrc.connect(analyser);
     analyser.connect(ctx.destination);
     $(".player").css("display", "block");

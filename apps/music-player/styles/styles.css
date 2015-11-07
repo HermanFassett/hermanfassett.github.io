@@ -13,13 +13,43 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0 0 10px #85BDA6;
-
+}
+.player {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  background: #85BDA6;
+  box-shadow: 0 0 50px black;
+  border-radius: 50px;
+}
+.ball {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.ball:hover {
+  box-shadow: 0 0 10px black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 .list {
   margin: 10px;
   border: 2px dashed black;
   width: auto;
   height: 10px;
+  overflow: auto;
 }
 .list-item {
   display: inline-block;
@@ -29,4 +59,12 @@ body {
   height: 100px;
   box-shadow: 0 0 10px #85BDA6;
   cursor: pointer;
+}
+.list-item h1 {
+  text-align: center;
+  font-family: monospace;
+  color: #222;
+}
+a {
+  text-decoration: none;
 }

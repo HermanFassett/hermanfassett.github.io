@@ -9,15 +9,17 @@ $(document).ready(function() {
       song + "</h1></div>");
     }
   }
+  var ctx, analyser, audioSrc;
   $(document).on("click", ".list-item", function() {
     var ctx = new AudioContext();
     audio = new Audio("./audio/" + $(this).text() + ".mp3");
     var audioSrc = ctx.createMediaElementSource(audio);
     var analyser = ctx.createAnalyser();
     audioSrc.connect(analyser);
+    analyser.connect(ctx.destination);
     $(".player").css("display", "block");
-
     audio.play();
+    frameLooper();
   });
   $(".ball").click(function() {
     (audio.paused) ? audio.play() : audio.pause();
@@ -32,4 +34,10 @@ $(document).ready(function() {
   $(window).on("resize" ,function() {resize()});
   load();
   resize();
+  function frameLooper(){
+  	window.webkitRequestAnimationFrame(frameLooper);
+  	fbc_array = new Uint8Array(analyser.frequencyBinCount);
+  	analyser.getByteFrequencyData(fbc_array);
+    $(".ball").css("transform", "scale(1.4)");
+  }
 });

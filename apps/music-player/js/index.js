@@ -38,7 +38,6 @@ $(document).ready(function() {
   	window.requestAnimationFrame(frameLooper);
   	fbc_array = new Uint8Array(analyser.frequencyBinCount);
   	analyser.getByteFrequencyData(fbc_array);
-    console.log(fbc_array);
-    $(".ball").css("transform", "scale(" + (fbc_array[0]/100) + ")");
+    $(".ball").css("transform", "translate(-50%, -50%) scale(" + (fbc_array[0]/100 + 1) + ")");
   }
 });

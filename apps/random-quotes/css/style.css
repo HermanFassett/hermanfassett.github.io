@@ -1,45 +1,45 @@
 body {
   background: rgb(90, 90, 90);
 }
-
 h1 {
   text-align: center;
   font-family: Pacifico, Sans-Serif;
 }
-
 p {
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin: 10px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-family: Sans-Serif;
-  width: 50%;
 }
-
 #btn-new {
   font-family: Pacifico, Sans-Serif;
   font-size: 25px;
   border-radius: 10px;
   background-color: green;
+  outline: none;
 }
-
-#quote-container {
+#btn-new:hover {
+  transform: scale(1.1);
+}
+#btn-new:active {
+  transform: scale(0.9) rotate3d(1, 0, 0, 40deg);
+}
+.quote-container {
   min-width: 200px;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  box-shadow: 10px 10px 15px #888888;
-  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px #888888;
+  border-radius: 15px;
 }
-
-#quote {
-  width: 100%;
-  font-size: 20px;
+.quote-container:hover  {
+  transform: scale(1.1);
+  transition: transform .5s;
+  -webkit-transition: transform .5s;
 }
-
-#author {
-  width: 100%;
-  font-style: italic;
-  text-align: right;
+#tweet-content:hover {
+  transform: scale(1.3);
+  transition: transform .2s ease-in-out;
 }

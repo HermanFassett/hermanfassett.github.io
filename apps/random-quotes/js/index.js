@@ -7,7 +7,10 @@ $("#btn-new").click(function() {
 var random = function() {
   $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(data) {
     $("#quote").text(data.quoteText);
-    $("#author").text(data.quoteAuthor);
+    if (data.quoteAuthor != "") {
+      $("#author").text(data.quoteAuthor);
+      $("#author").show();
+    } else $("#author").hide();
     tweetUpdate(data.quoteText, data.quoteAuthor);
   });
 }

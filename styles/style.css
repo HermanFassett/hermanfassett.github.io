@@ -1,71 +1,71 @@
 /* Body Styles */
 body {
+  margin: 0;
   background: #85B092;
   font-family: "Basic";
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Background Image */
 .background-img {
-  min-height: 100vh;
-  min-width: 100vw;
-  width: 200vh;
-  height: auto;
-  position: fixed;
+  min-width: 100%;
+  position: absolute;
+  transform: translate(0%, -50%);
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0px;
+  width: 100%;
+  height: auto;
   opacity: 0.2;
 }
+.small {
+  position: relative;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-bottom: -150px;
+}
 
+ /* Link Styling */
+ a {
+   text-decoration: none;
+   color: black;
+ }
 /* Main Container */
 .main {
-  position: absolute;
-  top: 50%;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: auto;
+  transform: translateX(-15%);
+}
+
+/* Menu bar */
+.menu {
+  font-family: Basic, monospace;
+  width: 100%;
   height: auto;
-}
-
-/* Square */
-.square {
-  pointer-events: none;
-  border: 2px solid black;
-  position: absolute;
+  position: fixed;
+  top: 0px;
+  background: white;
+  z-index: 100;
   opacity: 0;
-  background: gray;
-  border-radius: 15px;
-  width: 200px;
-  height: 150px;
-  z-index: -2;
+  box-shadow: 0 0 35px black;
 }
-.square:hover, .square:active {
-  z-index: 1;
+.menu > a {
+  font-size: 25px;
+  text-decoration: none;
+  padding: 5px;
+  position: relative;
+  line-height: 50px;
 }
-
-/* Square Positions */
-.square1 {
-  top: -100px;
-  left: -150px;
+.menu > a:hover {
+  background: #EEE;
 }
-.square2 {
-  top: -100px;
-  left: 125px;
+.menu > a:not(:first-child) {
+  border-left:1px inset #000;
 }
-.square3 {
-  top: 125px;
-  left: -150px;
-}
-.square4 {
-  top: 125px;
-  left: 125px
-}
-
 /* Circle */
 .circle {
+  position: relative;
   background: gray;
-  z-index: 0;
   border-radius: 50%;
   cursor: pointer;
   transition: transform .5s ease-in-out;
@@ -74,7 +74,7 @@ body {
   box-shadow: 0 0 15px black;
 }
 .circle:hover, .circle:active {
-  z-index: 1;
+  z-index: 3;
   -webkit-transform: scale(1.5) rotate(360deg);
   -moz-transform: scale(1.5) rotate(360deg);
   -ms-transform: scale(1.5) rotate(360deg);
@@ -127,7 +127,7 @@ body {
 /* Music Circle */
 .music-circle {
   position: relative;
-  left: -150px;
+  left: -175px;
   top: 250px;
   z-index: -1;
   width: 150px;
@@ -139,9 +139,9 @@ body {
 /* Coder Circle */
 .coder-circle {
   position: relative;
-  left: 250px;
+  left: 275px;
   top: -250px;
-  z-index: -1;
+  z-index: 1;
   width: 150px;
   height: 150px;
   border-color: green;
@@ -150,7 +150,7 @@ body {
 
 /* Circle Title */
 .title {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
@@ -170,6 +170,63 @@ body {
   text-shadow: 0 0 10px white;
 }
 
+/* A row */
+.row {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  z-index: 10;
+  font-family: monospace;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 25px black;
+}
+/* Section */
+.section {
+  width: 100%;
+  height: auto;
+  background: #85B092;
+}
+/* Container */
+.container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -5px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  width: 90%;
+  background: white;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 15px black;
+}
+/* Content */
+.content {
+  border-radius: 50px;
+  box-shadow: 0 0 15px #444;
+  height: 250px;
+  width: 400px;
+  max-width: 80%;
+  display: inline-block;
+  background: #444;
+  margin-top: 50px;
+  align-self: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.content:hover {
+  transform: scale(1.1);
+  transition: transform .2s ease-in-out;
+}
+
+/* Fade in */
+.fadein {
+  opacity: 0;
+}
 /* No Text Select */
 .noselect {
   -webkit-touch-callout: none;

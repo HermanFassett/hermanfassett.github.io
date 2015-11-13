@@ -62,6 +62,7 @@ body {
 .menu > a:not(:first-child) {
   border-left:1px inset #000;
 }
+
 /* Circle */
 .circle {
   position: relative;
@@ -227,6 +228,7 @@ body {
 .fadein {
   opacity: 0;
 }
+
 /* No Text Select */
 .noselect {
   -webkit-touch-callout: none;

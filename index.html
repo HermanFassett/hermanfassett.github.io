@@ -1,13 +1,19 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="styles/style.css" type="text/css" media="all" />
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="author" content="Herman Fassett">
+    <meta name="description" content="Personal website for Herman Fassett">
+    <!-- Title -->
+    <title>Herman Fassett</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/style.css" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Basic" rel="stylesheet" type="text/css">
     <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
-    <title>Herman Fassett</title>
   </head>
   <body class="noselect">
+    <!-- Nav bar -->
     <div class="menu">
       <a href="#">Herman Fassett</a>
       <a href="#about">About</a>
@@ -15,7 +21,11 @@
       <a href="#code">Code</a>
       <a href="#contact">Contact</a>
     </div>
+
+    <!-- Background image -->
     <img src="images/background-50.jpg" class="background-img" id="bg">
+
+    <!-- Main div with circles -->
     <div class="main">
       <!--Music Circle-->
       <a href="#music">
@@ -46,65 +56,101 @@
         </div>
       </a>
     </div>
+
+    <!-- About Section -->
     <div id="about" class="row"><h1>About</h1></div>
     <div class="section">
         <div class="container fadein">
+
           <h1>Hi, my name is Herman Fassett.</h1>
-          <h2>I'm an 18 year old Computer Science student who loves both music and computers.
-          Here I'm showing you some of the things I've accomplished.
+          <img src="images/Me.jpg" style="width:150px;border:10px solid black;">
+          <h2 style="margin: 10px">I'm an 18 year old Computer Science student who loves both music and computers.
+          I've recently been going through the <a href="http://freecodecamp.com" target="_blank">freecodecamp</a> course,
+          and this website is a result of my time there. Before that I'd been programming off and on since I was 12
+          though userscripts were the full extent of my web development then.<br><hr>
+          As far as music goes, I've been listening and playing music as long as I can remember. Probably my first instrument
+          outside of vocal was a Recorder and from there I branched to Piano and then Viola. I can trace my compositions back to
+          the age of 10.
           </h2>
         </div>
     </div>
+
+    <!-- Music Section -->
     <div id="music" class="row"><h1>Musician</h1></div>
     <div class="section">
         <div class="container fadein">
           <a href="https://youtu.be/7EY2qJ9vQHI" target="_blank">
             <div class="content"
                   style="background-image: url('images/Sunrise.jpg');background-size:cover;background-position:center;">
+                  <h1 class="content-text">Sunrise</h1>
+                  <h2 class="content-text">I took some simple melodies from my idea book I'd written over the past year or two to make this one</h2>
             </div>
           </a>
           <a href="https://youtu.be/nv7xf0MUFzw" target="_blank">
             <div class="content"
                   style="background-image: url('images/Pathtofreedom.jpg');background-size:cover;background-position:center;">
+                  <h1 class="content-text">The Path to Freedom</h1>
+                  <h2 class="content-text">I had this piece floating around in my head for a long time before this result came out.</h2>
             </div>
           </a>
           <a href="https://youtu.be/Za7OZ6MsmjU" target="_blank">
             <div class="content"
                   style="background-image: url('images/Winter.jpg');background-size:cover;background-position:center;">
+                  <h1 class="content-text">A Winter's Day</h1>
+                  <h2 class="content-text">The Christmas piece I wrote in Winter of 2014. Playing around with my new sounds.</h2>
             </div>
           </a>
           <a href="https://youtu.be/fnpvgyuooPs" target="_blank">
             <div class="content"
                   style="background-image: url('images/Exiled.jpg');background-size:cover;background-position:center;">
+                  <h1 class="content-text">Exiled</h1>
+                  <h2 class="content-text">
+                    Though not my first orchestral piece, this is the first one I wrote played by computer software sounds.
+                  </h2>
+            </div>
+          </a>
+          <a href="https://youtu.be/UukPZLxOZ9w" target="_blank">
+            <div class="content"
+                  style="background-image: url('images/DrakePassage.png');background-size:cover;background-position:center;">
+                  <h1 class="content-text">Drake Passage</h1>
+                  <h2 class="content-text">This is the second String Quartet I wrote played by me and my siblings back in 2013.</h2>
             </div>
           </a>
         </div>
     </div>
+
+    <!-- Code Section -->
     <div id="code" class="row"><h1>Coder</h1></div>
     <div class="section">
       <div class="container fadein">
         <a href="http://hermanfassett.me/apps/simon-game" target="_blank">
           <div class="content fadein"
                 style="background-image: url('images/Simon.png');background-size:cover;background-position:center;">
+                <h1 class="content-text">Online Simon Game</h1>
           </div>
         </a>
         <a href="http://hermanfassett.me/apps/weather-app" target="_blank">
           <div class="content fadein"
                 style="background-image: url('images/Weather.png');background-size:cover;background-position:center;">
+                <h1 class="content-text">A Local Weather App</h1>
           </div>
         </a>
         <a href="http://hermanfassett.me/apps/random-quotes" target="_blank">
           <div class="content fadein"
                 style="background-image: url('images/Quotes.png');background-size:cover;background-position:center;">
+                <h1 class="content-text">Random Quote Machine</h1>
           </div>
         </a>
         <a href="http://hermanfassett.me/apps/wikipedia-viewer" target="_blank">
           <div class="content fadein"
                 style="background-image: url('images/Wikipedia.png');background-size:cover;background-position:center;">
+                <h1 class="content-text">Wikipedia Search</h1>
           </div>
         </a>
       </div>
     </div>
+
+    <!-- Contact Section -->
     <div id="contact" class="row"><h1>Contact</h1>
       <h2>hermanfassett@gmail.com</h2>
       <a href="https://plus.google.com/+HermanFassett/" target="_blank">
@@ -120,6 +166,8 @@
         <span class="socicon socicon-github"></span>
       </a>
     </div>
+
+    <!-- Scripts -->
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>

@@ -25,12 +25,13 @@ $(document).ready(function(){
       $(".background-img").addClass("small");
       $(".main").hide();
       $(".circle").hide();
-      $($(".menu")[0]).css("opacity", "1");
+      $($(".menu")[0]).addClass("largemenu");
     }
     else {
       small = false;
       $(".main").show();
       $(".circle").show();
+      $($(".menu")[0]).removeClass("largemenu");
       $(".background-img").removeClass("small");
     }
   }

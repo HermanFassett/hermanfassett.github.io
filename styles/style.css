@@ -62,7 +62,9 @@ body {
 .menu > a:not(:first-child) {
   border-left:1px inset #000;
 }
-
+.largemenu {
+  opacity: 1;
+}
 /* Circle */
 .circle {
   position: relative;

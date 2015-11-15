@@ -61,11 +61,11 @@
     <div id="about" class="row"><h1>About</h1></div>
     <div class="section">
         <div class="container fadein">
-
+          <br>
           <h1>Hi, my name is Herman Fassett.</h1>
           <img src="images/Me.jpg" style="width:150px;border:10px solid black;">
           <h2 style="margin: 10px">I'm an 18 year old Computer Science student who loves both music and computers.
-          I've recently been going through the <a href="http://freecodecamp.com" target="_blank">freecodecamp</a> course,
+          I've recently been going through the <a href="http://freecodecamp.com" target="_blank" style="text-decoration:underline">freecodecamp</a> course,
           and this website is a result of my time there. Before that I'd been programming off and on since I was 12
           though userscripts were the full extent of my web development then.<br><hr>
           As far as music goes, I've been listening and playing music as long as I can remember. Probably my first instrument
@@ -151,8 +151,19 @@
     </div>
 
     <!-- Contact Section -->
-    <div id="contact" class="row"><h1>Contact</h1>
-      <h2>hermanfassett@gmail.com</h2>
+    <div id="contact" class="row"><h1>Contact</h1></div>
+    <div class="section">
+      <div class="container fadein">
+        <br>
+        <form action="http://formspree.io/hermanfassett@gmail.com" method="post" class="contact_form">
+          <label>Name: </label><input type="text" name="name" placeholder="Your Name"><br>
+          <label>Email: </label><input type="email" name="_replyto" placeholder="Your Email"><br>
+          <p>Message</p><textarea name="message" rows="6" cols="25" placeholder="Your Message"></textarea><br>
+          <button type="submit" value="Send">Send</button><button type="reset" value="Clear">Clear</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
       <a href="https://plus.google.com/+HermanFassett/" target="_blank">
         <span class="socicon socicon-googleplus"></span>
       </a>
@@ -165,8 +176,8 @@
       <a href="https://github.com/HermanFassett" target="_blank">
         <span class="socicon socicon-github"></span>
       </a>
+      <p>&copy <script>document.write(new Date().getFullYear())</script> Herman Fassett</p>
     </div>
-
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

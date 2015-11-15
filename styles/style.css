@@ -51,6 +51,7 @@ body {
   z-index: 100;
   opacity: 0;
   box-shadow: 0 0 35px black;
+  transition: opacity .2s;
 }
 .menu > a {
   font-size: 25px;

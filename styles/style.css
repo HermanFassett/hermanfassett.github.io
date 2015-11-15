@@ -127,7 +127,7 @@ body {
   z-index: 0;
   width: 250px;
   height: 250px;
-  border-color: black;
+  border-color: #16262E;
   background: #BABF95;
 }
 
@@ -139,8 +139,8 @@ body {
   z-index: -1;
   width: 150px;
   height: 150px;
-  border-color: blue;
-  background: #EED691;
+  border-color: #2E4756;
+  background: #8AB0AB;
 }
 
 /* Coder Circle */
@@ -151,8 +151,8 @@ body {
   z-index: 1;
   width: 150px;
   height: 150px;
-  border-color: green;
-  background: #2F394D;
+  border-color: #3C7A89;
+  background: #50514F;
 }
 
 /* Circle Title */

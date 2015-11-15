@@ -42,6 +42,7 @@ body {
 
 /* Menu bar */
 .menu {
+  pointer-events: none;
   font-family: Basic, monospace;
   width: 100%;
   height: auto;
@@ -51,7 +52,6 @@ body {
   z-index: 100;
   opacity: 0;
   box-shadow: 0 0 35px black;
-  transition: opacity .2s;
 }
 .menu > a {
   font-size: 25px;
@@ -68,6 +68,8 @@ body {
 }
 .largemenu {
   opacity: 1;
+  transition: none;
+  pointer-events: all;
 }
 
 /* Circle */

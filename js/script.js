@@ -9,16 +9,22 @@
         var object_top = $(this).position().top; // Top of current element
         var screen_bottom = $(window).scrollTop() + $(window).height(); //Bottom of visible screen
         if(screen_bottom > object_top)
-          $(this).animate({'opacity':'1'},1500); // Show element if in view
+          $(this).animate({'opacity':'1'},1000); // Show element if in view
       });
       // If the width is 1000 pixels or greater
       if (!small) {
         var nav = $(".menu")[0]; // Get the menu bar
         var circle = $(".circle")[1]; // Get the main circle
         var bottom = $(circle).position().top + $(circle).outerHeight(); // Get bottom of circle
-        if (bottom < $(window).scrollTop())
-          $(nav).animate({"opacity":"1"}, 100); // Show menu if main circle isn't in view
-        else $(nav).animate({"opacity":"0"}, 100); // Otherwise hide menu bar
+        if (bottom < $(window).scrollTop()) {
+          $(nav).css("pointer-events", "all");
+          $(nav).css("transition", "opacity .5s ease-in-out");
+          $(nav).css("opacity", "1"); // Show menu if main circle isn't in view
+        }
+        else {
+          $(nav).css("opacity", "0"); // Otherwise hide menu bar
+          $(nav).css("pointer-events", "none");
+        }
       }
     });
 

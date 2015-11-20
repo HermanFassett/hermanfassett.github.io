@@ -37,7 +37,7 @@ var nextWins = function() {
     type = "d";
     ds.forEach(check);
     function check(a, index) {
-        var b = a.match(/X{2}|O{2}/);
+        var b = a.match(/((0|^)+(X{2}|O{2})(0|$)+)/);
         if (b) wins.push(indexOf(type, [(b.index === 0) ? 2 : 0, index]));
         else {
             b = a.match(/X0X|O0O/);

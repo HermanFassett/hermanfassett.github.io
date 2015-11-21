@@ -2,14 +2,17 @@ var arr = "000"+
           "000"+
           "000",
           user = "X", ai = "O";
-var rows = function() {
-    return arr.match(/.{1,3}/g);
+var rows = function(inarr) {
+    var inarr = inarr || arr;
+    return inarr.match(/.{1,3}/g);
 };
-var columns = function() {
-    return [arr[0]+arr[3]+arr[6],arr[1]+arr[4]+arr[7],arr[2]+arr[5]+arr[8]];
+var columns = function(inarr) {
+    var inarr = inarr || arr;
+    return [inarr[0]+inarr[3]+inarr[6],inarr[1]+inarr[4]+inarr[7],inarr[2]+inarr[5]+inarr[8]];
 };
-var diagonals = function() {
-    return [arr[0]+arr[4]+arr[8], arr[2]+arr[4]+arr[6]];
+var diagonals = function(inarr) {
+    var inarr = inarr || arr;
+    return [inarr[0]+inarr[4]+inarr[8], inarr[2]+inarr[4]+inarr[6]];
 };
 var indexOf = function(type, a) {
     var index = a[0], offset = a[1];
@@ -17,8 +20,9 @@ var indexOf = function(type, a) {
     else if (type === "c") return (index * 3) + offset;
     else if (type === "d") return (offset === 0) ? index * 4 : index * 2 + 2;
 };
-var wins = function() {
-    var rs = rows(), cs = columns(), ds = diagonals();
+var wins = function(inarr) {
+    var inarr = inarr || arr;
+    var rs = rows(inarr), cs = columns(inarr), ds = diagonals(inarr);
     var winner = false;
     rs.forEach(check);
     cs.forEach(check);
@@ -28,8 +32,9 @@ var wins = function() {
     }
     return winner;
 };
-var nextWins = function() {
-    var rs = rows(), cs = columns(), ds = diagonals(), type = "r";
+var nextWins = function(inarr, player) {
+    var inarr = inarr || arr;
+    var rs = rows(inarr), cs = columns(inarr), ds = diagonals(inarr), type = "r";
     var wins = [];
     rs.forEach(check);
     type = "c";
@@ -37,21 +42,35 @@ var nextWins = function() {
     type = "d";
     ds.forEach(check);
     function check(a, index) {
-        var b = a.match(/(OO|XX)/);
+        var b = (player) ? a.match(player + player) : a.match(/(OO|XX)/);
         if (b && !b.input.match((b[0][0] === "X") ? "O" : "X")) wins.push(indexOf(type, [(b.index === 0) ? 2 : 0, index]));
         else {
-            b = a.match(/X0X|O0O/);
+            b = (player) ? a.match(player + "0" + player) : a.match(/X0X|O0O/);
             if (b) wins.push(indexOf(type, [1, index]));
         }
     }
     return wins;
 };
-var possibleMoves = function() {
+var forks = function(inarr, player) {
+  var inarr = inarr || arr;
+  var rs = rows(inarr), cs = columns(inarr), ds = diagonals(inarr), type = "r";
+  var fork = [], moves = possibleMoves(inarr);
+  moves.forEach(function(a, i) {
+    var temp = arr;
+    temp = temp.substr(0, a) + player + temp.substr(a + 1);
+    if (nextWins(temp, player).length > 1) {
+      fork.push(a);
+    }
+  });
+  return fork;
+}
+var possibleMoves = function(inarr) {
+  var inarr = inarr || arr;
   var moves = [];
-    arr.split("").forEach(function(a, index) {
-      if (a === "0") moves.push(index);
-    });
-    return moves;
+  inarr.split("").forEach(function(a, index) {
+    if (a === "0") moves.push(index);
+  });
+  return moves;
 };
 $(document).ready(function() {
   var turn = true;
@@ -80,13 +99,23 @@ $(document).ready(function() {
       });
       best.forEach(function(b,i) {
         var temp = arr;
-        arr = arr.substr(0, b) + ai + arr.substr(b + 1);
+        temp = temp.substr(0, b) + ai + temp.substr(b + 1);
         if (wins()) best = [b];
-        arr = temp;
       });
       arr = arr.substr(0, best[0]) + ai + arr.substr(best[0] + 1);
       $(cs[best[0]]).css("background-image", "url('images/" + ai +".png')");
       if (wins()) win(ai);
+    }
+    else if (forks(arr, "X").length > 0) {
+      var moves = forks(arr, "X");
+      console.log(moves);
+      arr = arr.substr(0, moves[0]) + ai + arr.substr(moves[0] + 1);
+      $(cs[moves[0]]).css("background-image", "url('images/" + ai + ".png')");
+    }
+    else if (forks(arr, "O").length > 0) {
+      var moves = forks(arr, "O");
+      arr = arr.substr(0, moves[0]) + ai + arr.substr(moves[0] + 1);
+      $(cs[moves[0]]).css("background-image", "url('images/" + ai + ".png')");
     }
     else if (possibleMoves().length > 0) {
       var moves = possibleMoves();

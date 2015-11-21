@@ -100,27 +100,37 @@ $(document).ready(function() {
       best.forEach(function(b,i) {
         var temp = arr;
         temp = temp.substr(0, b) + ai + temp.substr(b + 1);
-        if (wins()) best = [b];
+        if (wins(temp)) best = [b];
       });
       arr = arr.substr(0, best[0]) + ai + arr.substr(best[0] + 1);
       $(cs[best[0]]).css("background-image", "url('images/" + ai +".png')");
       if (wins()) win(ai);
     }
-    else if (forks(arr, "X").length > 0) {
-      var moves = forks(arr, "X");
-      console.log(moves);
+    else if (forks(arr, user).length > 0) {
+      var moves = forks(arr, user);
+      var best = { index: moves[0], length: moves.length };
+      moves.forEach(function(a) {
+        var temp = arr;
+        temp = temp.substr(0, a) + ai + temp.substr(a + 1);
+        var w = forks(temp, user);
+        if (w.length > best.length) {
+          best.index = a;
+          best.length = w;
+        }
+      });
       arr = arr.substr(0, moves[0]) + ai + arr.substr(moves[0] + 1);
       $(cs[moves[0]]).css("background-image", "url('images/" + ai + ".png')");
     }
-    else if (forks(arr, "O").length > 0) {
-      var moves = forks(arr, "O");
+    else if (forks(arr, ai).length > 0) {
+      var moves = forks(arr, ai);
       arr = arr.substr(0, moves[0]) + ai + arr.substr(moves[0] + 1);
       $(cs[moves[0]]).css("background-image", "url('images/" + ai + ".png')");
     }
     else if (possibleMoves().length > 0) {
       var moves = possibleMoves();
-      arr = arr.substr(0, moves[0]) + ai + arr.substr(moves[0] + 1);
-      $(cs[moves[0]]).css("background-image", "url('images/" + ai + ".png')");
+      var move = (moves.indexOf(4) !== -1) ? 4 : moves[0];
+      arr = arr.substr(0, move) + ai + arr.substr(move + 1);
+      $(cs[move]).css("background-image", "url('images/" + ai + ".png')");
     }
     if (possibleMoves().length === 0 && !wins()) win("tie");
     turn = true;

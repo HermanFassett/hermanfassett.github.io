@@ -135,18 +135,23 @@ $(document).ready(function() {
     }
     // Else if a fork is being made by user, counter
     else if (forks(arr, user).length > 0) {
-      var moves = forks(arr, user); // Get possible forks for user
-      var best = { index: moves[0], length: moves.length }; // Create a new best move obj
+      var moves = possibleMoves(), forkMoves = forks(arr, user); // Get possible forks for user
+      var best = { index: moves[0], length: forkMoves.length }; // Create a new best move obj
       // loop through possible forks to find best counter move
       moves.forEach(function(a) {
         var temp = arr;
         temp = temp.substr(0, a) + ai + temp.substr(a + 1);
-        var w = forks(temp, user);
-        // Find the move leaving the least amount of possible forks for user
-        if (w.length < best.length) {
-          best.index = a;
-          best.length = w.length;
-        }
+        forkMoves.forEach(function(b) {
+          if (b !== a) {
+            temp = temp.substr(0, b) + user + temp.substr(b + 1);
+            var w = nextWins(temp, user);
+            // Find the move leaving the least amount of possible forks for user
+            if (w.length < best.length) {
+              best.index = a;
+              best.length = w.length;
+            }
+          }
+        });
       });
       arr = arr.substr(0, best.index) + ai + arr.substr(best.index + 1);
       $(cs[best.index]).css("background-image", "url('images/" + ai + ".png')");

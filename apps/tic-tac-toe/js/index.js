@@ -160,11 +160,12 @@ $(document).ready(function() {
     // Otherwise go through remaining possible moves
     else if (possibleMoves().length > 0) {
       var moves = possibleMoves().join(""), move; // Get possible moves
-      // If player goes in a corner, go in the opposite corner if possible
-      if ((arr[0] === user || arr[8] === user) && moves.match(/[80]/)) move = moves.match("8") || moves.match("0");
-      else if ((arr[2] === user || arr[6] === user) && moves.match(/[26]/)) move = moves.match("6") || moves.match("2");
       // Else go in center if possible
-      else if (moves.match("4")) move = 4;
+      if (moves.match("4")) move = 4;
+      // If player goes in a corner, go in the opposite corner if possible
+      else if ((arr[0] === user || arr[8] === user) && moves.match(/[80]/)) move = moves.match("8") || moves.match("0");
+      else if ((arr[2] === user || arr[6] === user) && moves.match(/[26]/)) move = moves.match("6") || moves.match("2");
+
       // Else play in a corner
       else if (moves.match(/[0268]/)) move = moves.match("0") || moves.match("2") || moves.match("6") || moves.match("8");
       // Else play on a side (whatever's left)

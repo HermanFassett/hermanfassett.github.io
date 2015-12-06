@@ -1,0 +1,112 @@
+@font-face {
+  font-family: Digital;
+  src: url("../fonts/Digital.ttf");
+}
+body {
+  background-color: #fff;
+  background-image:
+  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+  linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
+.calculator {
+  width: 425px;
+  height: 385px;
+  background-color: #333;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px 10px #444, 0px 0px 0px 15px #000, inset 0px 0px 10px 2px #666;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.display-digits {
+  font-family: Digital;
+  background-color: #777;
+  margin: 10px;
+  width: auto;
+  height: 50px;
+  font-size: 16px;
+  text-align: right;
+  line-height: 50px;
+  border: 1px solid black;
+}
+.display-binary {
+  background-color: #777;
+  margin: 10px;
+  width: auto;
+  height: 75px;
+  border: 1px solid black;
+}
+.byte {
+  font-family: Digital;
+  width: 25%;
+  height: 50%;
+  background: black;
+  color: white;
+  float: left;
+  text-align: center;
+  line-height: 37.5px;
+}
+.left-box {
+  float:left;
+  height: auto;
+  width: auto;
+}
+.type-box {
+  width: 71px;
+  height: 96px;
+  border: 2px solid black;
+  margin-left: 10px;
+  font-weight: bold;
+  line-height: 23px;
+}
+.len-box {
+  width: 71px;
+  height: 96px;
+  border: 2px solid black;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  line-height: 23px;
+}
+.function-box {
+  float: left;
+  width: 100px;
+  height: auto;
+  margin-left: 5px;
+  margin-right: -5px;
+}
+.letter-box {
+  float: left;
+  width: 50px;
+}
+.number-box {
+  float: left;
+  width: 190px;
+  height: auto;
+}
+.btn {
+  width: 40px;
+  height: 29px;
+  border-radius: 2px;
+  border:none;
+  background: #ddd;
+  box-shadow: 0 0 40px black;
+  color: black;
+  margin-left: 0px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.btn:active {
+  box-shadow: none;
+  background: #aaa;
+}
+.btn:disabled {
+  box-shadow: none;
+  background: #999;
+}
+.btn-2 {
+  width: 84px;
+}

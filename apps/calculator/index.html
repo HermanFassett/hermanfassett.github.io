@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+  <title>Herman Fassett - Javascript Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display-digits">
+    <h4 id="display">0</h4>
+    </div>
+    <div class="display-binary">
+      <div class="byte q">0000 0000</div>
+      <div class="byte q">0000 0000</div>
+      <div class="byte q">0000 0000</div>
+      <div class="byte q">0000 0000</div>
+      <div class="byte d">0000 0000</div>
+      <div class="byte d">0000 0000</div>
+      <div class="byte w">0000 0000</div>
+      <div class="byte b">0000 0000</div>
+    </div>
+    <div class="left-box">
+      <div class="type-box">
+        <form action="">
+        <input type="radio" name="type" value="hex">Hex<br>
+        <input type="radio" name="type" value="dec" checked>Dec<br>
+        <input type="radio" name="type" value="oct">Oct<br>
+        <input type="radio" name="type" value="bin">Bin
+        </form>
+      </div>
+      <div class="len-box">
+        <form action="">
+        <input type="radio" name="type" value="q" checked>Qword<br>
+        <input type="radio" name="type" value="d">Dword<br>
+        <input type="radio" name="type" value="w">Word<br>
+        <input type="radio" name="type" value="b">Byte
+        </form>
+      </div>
+    </div>
+    <div class="function-box">
+      <input type="button" class="btn" value=" " disabled>
+      <input type="button" class="btn" value="Mod">
+      <input type="button" class="btn" value="(">
+      <input type="button" class="btn" value=")">
+      <input type="button" class="btn" value="RoL">
+      <input type="button" class="btn" value="RoR">
+      <input type="button" class="btn" value="Or">
+      <input type="button" class="btn" value="Xor">
+      <input type="button" class="btn" value="Lsh">
+      <input type="button" class="btn" value="Rsh">
+      <input type="button" class="btn" value="Not">
+      <input type="button" class="btn" value="And">
+    </div>
+    <div class="letter-box">
+      <input type="button" class="btn" value="A" disabled>
+      <input type="button" class="btn" value="B" disabled>
+      <input type="button" class="btn" value="C" disabled>
+      <input type="button" class="btn" value="D" disabled>
+      <input type="button" class="btn" value="E" disabled>
+      <input type="button" class="btn" value="F" disabled>
+    </div>
+    <div class="number-box">
+      <input type="button" class="btn" value="&Sqrt;">
+      <input type="button" class="btn" value="%">
+      <input type="button" class="btn" value="1/x">
+      <input type="button" class="btn" value="=">
+      <input type="button" class="btn" value="&larr;">
+      <input type="button" class="btn" value="CE">
+      <input type="button" class="btn" value="C&shy;">
+      <input type="button" class="btn" value="&plusmn;">
+      <input type="button" class="btn" value="7">
+      <input type="button" class="btn" value="8">
+      <input type="button" class="btn" value="9">
+      <input type="button" class="btn" value="/">
+      <input type="button" class="btn" value="4">
+      <input type="button" class="btn" value="5">
+      <input type="button" class="btn" value="6">
+      <input type="button" class="btn" value="*">
+      <input type="button" class="btn" value="1">
+      <input type="button" class="btn" value="2">
+      <input type="button" class="btn" value="3">
+      <input type="button" class="btn" value="-">
+      <input type="button" class="btn btn-2" value="0">
+      <input type="button" class="btn" value=".">
+      <input type="button" class="btn" value="+">
+    </div>
+  </div>
+  <script src="js/jsdigits-0.0.1.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/jquery-bigtext.js"></script>
+</body>
+</html>

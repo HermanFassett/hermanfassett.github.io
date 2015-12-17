@@ -1,0 +1,123 @@
+body {
+  background: #333;
+  font-family: monospace;
+  text-align: center;
+}
+
+/* Matrix Styling */
+.matrix {
+  /* Always Center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Starting Height */
+  width: auto;
+  height: auto;
+  /* Brackets */
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  border-radius: 10px;
+}
+
+/* Row Styling */
+.row {
+  width: auto;
+  height: 32px;
+  overflow:hidden;
+  margin: 10px;
+  display: flex;
+}
+
+/* Element in a Matrix */
+.matrix .element {
+  /* Default Size */
+  min-width: 25px;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  /* Margins */
+  margin-left: 5px;
+  margin-right: 5px;
+  /* Colors */
+  border: 1px dashed #222;
+  color: white;
+  /* Change cursor to hand */
+  cursor: pointer;
+  /* Text properties */
+  text-align: center;
+  font-size: 25px;
+  font-family: fantasy, monospace;
+}
+.matrix .element:focus {
+  /* Set Cursor Style to Text */
+  cursor: text;
+  /* Change border and default outline */
+  border: 1px dashed red;
+  outline: none;
+  /* Add a text shadow */
+  text-shadow: 0 0 1px white;
+}
+
+/* Button styling */
+button {
+  /* Colors */
+  background: #666;
+  color: #DDD;
+  /* Text properties */
+  font-family: fantasy, monospace;
+  font-size: 20px;
+  /* Other styles */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: auto;
+  padding: 5px;
+}
+button:hover {
+  background: #888;
+}
+button:active {
+  background: #444;
+  text-shadow: 0px 0px 10px white;
+}
+
+/* Text styling */
+p {
+  font-family: fantasy, monospace;
+  padding: 10px;
+}
+/* Dialog */
+.dialog {
+  /* Display and styles*/
+  display: block;
+  background: #555;
+  border-radius: 15px;
+  /* Position and size */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 210px;
+  /* Bring to top */
+  z-index: 10;
+  /* Transitions */
+  transition: display 1s;
+}
+.dialog > button {
+  /* Size */
+  width: 50px;
+  height: 35px;
+  /* Color and styles */
+  background: #393;
+  border-radius: 5px;
+  border: 0px solid black;
+  /* No button outline */
+  outline: none;
+  /* Positioning */
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

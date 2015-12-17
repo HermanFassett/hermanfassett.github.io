@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "EZ Psaltica";
+  src: url("../fonts/EZ Psaltica.ttf") format("truetype");
+}
+body {
+  background: #444;
+  font-family: "Acme";
+  text-align: center;
+}
+.page {
+  width: 612px;
+  height: 792px;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  background: white;
+}
+.text {
+  position: relative;
+  font-family: EZ Psaltica;
+  font-size: 25px;
+  margin-top: 50px;
+  padding-top: 50px;
+  outline: none;
+}

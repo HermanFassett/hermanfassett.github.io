@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <title>Herman Fassett - Matrix RREF</title>
+  </head>
+  <body>
+    <div class="dialog">
+      <p>
+        TAB - go to next element.<br>
+        DEL - remove current column.<br>
+        CTRL+DEL - remove current row.<br>
+        SPACE - add new column.<br>
+        ENTER - add new row.<br>
+        CTRL+ENTER - calculate RREF<br>
+        CTRL+Q - show this again.
+      </p>
+      <button id="btn-ok">OK</button>
+    </div>
+    <div class="matrix">
+      <div class="row">
+        <div class="element" contenteditable>1</div>
+        <div class="element" contenteditable>0</div>
+        <div class="element" contenteditable>0</div>
+      </div>
+      <div class="row">
+        <div class="element" contenteditable>0</div>
+        <div class="element" contenteditable>1</div>
+        <div class="element" contenteditable>0</div>
+      </div>
+      <div class="row">
+        <div class="element" contenteditable>0</div>
+        <div class="element" contenteditable>0</div>
+        <div class="element" contenteditable>1</div>
+      </div>
+    </div>
+    <!--JQuery reference must come first-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

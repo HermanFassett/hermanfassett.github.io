@@ -1,0 +1,29 @@
+@font-face {
+   font-family: Digital;
+   src: url("../fonts/Digital.ttf"); }
+body {
+  background-color: #233329;
+  font-size: 28px;
+  font-family: "Patua One", Arial, serif; font-weight: 400;
+}
+.main {
+  width: 293px;
+  height: 541px;
+  background: #52555A;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  border-top: 10px solid black;
+  border-bottom: 25px solid black;
+  border-radius:20px 20px 55px 55px;
+}
+.display-holder {
+  height: 145px;
+  width: 275px;
+  margin: 20px 10px 50px 9px;
+  background: black;
+  border-radius: 20% 20% 25% 25%;
+}
+.display-holder > img {
+  width: 40%;
+  margin: 15px 30% 15px 30%;
+}

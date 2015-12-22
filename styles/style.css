@@ -219,7 +219,7 @@ body {
 
 /* Content */
 .content {
-  border-radius: 50px;
+  border-radius: 25px;
   box-shadow: 0 0 15px #444;
   height: 250px;
   width: 400px;
@@ -235,20 +235,20 @@ body {
   transform: scale(1.1);
   transition: transform .2s ease-in-out;
 }
-.content:hover .content-text {
-  transition: opacity 1s;
-  opacity: 1;
-}
 
 /* Content Text */
 .content-text {
-  opacity: 0;
   text-shadow: 0 0 10px white, 0 0 10px white;
 }
 
 /* Fade in */
 .fadein {
   opacity: 0;
+}
+
+.content:hover .fadein {
+  transition: opacity 1s;
+  opacity: 1;
 }
 
 .contact_form {

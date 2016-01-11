@@ -74,6 +74,7 @@ body {
 
 /* Circle */
 .circle {
+  margin: 0px;
   position: relative;
   background: gray;
   border-radius: 50%;

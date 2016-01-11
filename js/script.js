@@ -9,7 +9,7 @@
         var object_top = $(this).position().top; // Top of current element
         var screen_bottom = $(window).scrollTop() + $(window).height(); //Bottom of visible screen
         if(screen_bottom > object_top)
-          $(this).animate({'opacity':'1'},1000); // Show element if in view
+          $(this).animate({'opacity':'1'},500); // Show element if in view
       });
       // If the width is 1000 pixels or greater
       if (!small) {

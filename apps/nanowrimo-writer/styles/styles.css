@@ -1,0 +1,38 @@
+body {
+  background: #CCC;
+  font-family: Cursive, Helvetica, Serif;
+}
+label {
+  font-size: 20px;
+  font-family: Cursive, Helvetica, Serif;
+}
+.btn {
+  min-width: 98px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: linear-gradient(lightblue, #55A);
+  cursor: pointer;
+}
+.red {
+  background: linear-gradient(#A88, red);
+}
+.textarea {
+  min-height: 100px;
+  min-width: 200px;
+  background: linear-gradient(#FFF, #FFC);
+  border-radius: 5px;
+  padding: 0;
+  border: 1px solid black;
+  font-family: Cursive, Helvetica, Serif;
+}
+.row {
+  float: left;
+  min-width: 200px;
+}
+.container {
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

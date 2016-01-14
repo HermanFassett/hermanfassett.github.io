@@ -1,0 +1,24 @@
+body {
+  background: white;
+}
+.title {
+  text-align: center;
+  font-family: Arial;
+}
+.chart {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial;
+  width: 1000px;
+  height: 500px;
+}
+.chart .hover {
+  fill: #312;
+}
+.chart .leave {
+  fill: #662;
+}
+.bar {
+  fill: #662;
+}

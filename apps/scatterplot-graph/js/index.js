@@ -3,13 +3,13 @@ var margin = {top: 20, right: 150, bottom: 30, left: 100},
     height = 500 - margin.top - margin.bottom;
 
 var xValue = function(d) { return d.Seconds;},
-    xScale = d3.scale.linear().range([0, width]),
+    xScale = d3.scale.linear().range([width, 0]),
     xMap = function(d) { return xScale(xValue(d));},
     xLabel = function(d) { return xScale(xValue(d)) + 8;},
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 var yValue = function(d) { return d.Place;},
-    yScale = d3.scale.linear().range([height, 0]),
+    yScale = d3.scale.linear().range([0, height]),
     yMap = function(d) { return yScale(yValue(d));},
     yLabel = function(d) { return yScale(yValue(d)) + 5;},
     yAxis = d3.svg.axis().scale(yScale).orient("left");

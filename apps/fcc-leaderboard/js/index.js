@@ -19,6 +19,17 @@ var Header = React.createClass({
     );
   }
 });
+var Head = React.createClass({
+  displayName: "Head",
+
+  render: function render() {
+    return React.createElement(
+      "header",
+      { className: "head" },
+      "This score is calculated as Points + (Basejumps * 60) + (Ziplines * 30) + (Bonfires * 3)."
+    );
+  }
+});
 
 var Footer = React.createClass({
   displayName: "Footer",
@@ -75,7 +86,7 @@ var User = React.createClass({
       React.createElement(
         "td",
         null,
-        this.props.points
+        this.props.total
       ),
       React.createElement(
         "td",
@@ -167,6 +178,7 @@ var Page = React.createClass({
       "div",
       null,
       React.createElement(Header, null),
+      React.createElement(Head, null),
       React.createElement(Table, null),
       React.createElement(Footer, null)
     );

@@ -3,6 +3,12 @@ html, body {
   margin: 0px;
 }
 
+.head {
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
 header, footer {
   height: 50px;
   background: #381F0B;
@@ -27,7 +33,7 @@ header img {
 
 .user {
   font-family: Open Sans, Fantasy, Arial;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
 }
 

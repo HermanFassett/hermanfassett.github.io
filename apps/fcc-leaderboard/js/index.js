@@ -2,7 +2,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var urlroot = "http://fcctop100.herokuapp.com/api/fccusers/top/";
+var urlroot = "https://fcctop100.herokuapp.com/api/fccusers/top100/";
 
 var Header = React.createClass({
   displayName: "Header",
@@ -75,12 +75,12 @@ var User = React.createClass({
       React.createElement(
         "td",
         null,
-        this.props.alltime
+        this.props.points
       ),
       React.createElement(
         "td",
         null,
-        this.props.recent
+        this.props.totalRecent
       )
     );
   }

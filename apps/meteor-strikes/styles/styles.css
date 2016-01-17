@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
 .graticule {
   fill: none;
   stroke: #777;
@@ -13,6 +17,7 @@
   stroke-width: .5px;
 }
 .tooltip {
+  text-align: left;
   color: #aaa;
   background: #222;
   position: absolute;

@@ -1,0 +1,26 @@
+.graph {
+  background: #80CDC1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px black;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node {
+  stroke: #003C30;
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+.tooltip {
+  background: #543005;
+  position: absolute;
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: 4px solid #003c30;
+  border-radius: 1px;
+  box-shadow: 0 0 5px black;
+}

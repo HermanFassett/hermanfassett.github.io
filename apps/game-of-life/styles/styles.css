@@ -1,0 +1,48 @@
+body {
+  background: #222;
+}
+
+.main {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.board {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid #511;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 10px 10px black;
+  background: #000;
+}
+
+.grid {
+  position: absolute;
+  border: 1px solid black;
+}
+
+.text {
+  color: #555;
+  text-shadow: 0 0 5px black;
+  text-align: center;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+}
+
+.btn-default {
+  color: #E8F7EE;
+  background: #191D32;
+}
+
+.btn-default:hover {
+  color: #E3DFFF;
+  background: #282F44;
+}
+
+.btn-default:active {
+  color: #5A352A;
+  background: #1E2F23;
+}

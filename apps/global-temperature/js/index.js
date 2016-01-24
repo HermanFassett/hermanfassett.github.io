@@ -57,7 +57,9 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   // Load tip
-  var tip = d3.tip().attr('class', 'd3-tip')
+  var tip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
   // Month labels
   var monthLabels = svg.selectAll(".monthLabel")
@@ -98,9 +100,6 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("text-anchor", "middle")
     .text("Years");
 
-  // Add tooltip
-  svg.call(tip);
-
   // Add cards
   var cards = svg.selectAll(".year")
     .data(monthlyData, function(d) { return (d.year + ':' + d.month)})
@@ -112,15 +111,21 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
       .style("fill", colors[5]) // Start color
     .on("mouseover", function(d) {
       // Set tooltip html and show
+      tip.transition()
+          .duration(100)
+          .style("opacity", 1);
       tip.html(
           d.year + " - " + months[d.month - 1] + "<br>" +
           (Math.floor((d.variance + baseTemperature) * 1000) / 1000) + " &deg;C<br>" +
-          d.variance + " &deg;C"
-      ).show();
+          d.variance + " &deg;C")
+        .style("left", (d3.event.pageX - parseInt(tip.style("width"))/2) + "px")
+        .style("top", (d3.event.pageY - 100) + "px");
     })
     .on("mouseout", function(d) {
       // Hide tooltip
-      tip.hide();
+      tip.transition()
+          .duration(200)
+          .style("opacity", 0);
     })
     .transition().duration(1000)
     .style("fill", function(d) { return colorScale(d.variance + baseTemperature)});

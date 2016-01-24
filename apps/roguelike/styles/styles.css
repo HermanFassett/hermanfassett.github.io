@@ -1,0 +1,36 @@
+body {
+  background: #555;
+}
+
+.zoomed {
+  color: red;
+  font-size: 2em;
+  line-height: 14px;
+}
+
+.tile {
+  position: absolute;
+}
+
+.main {
+  background: #999;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.75);
+}
+
+.game {
+  width: auto;
+  height: auto;
+}

@@ -70,8 +70,8 @@ d3.json(worldurl, function(error, world) {
                  "<b>Mass:</b> " + d.properties.mass + "</br>" +
                  "<b>Date:</b> " + new Date(d.properties.year).toUTCString() + "</br>" +
                  "<b>Lat/Lon:</b> " + d.properties.reclat + "/" +d.properties.reclong)
-          .style("left", (d3.event.pageX) + "px")
-          .style("top", (d3.event.pageY - 30) + "px");
+          .style("left", (d3.event.pageX - parseInt(tip.style("width"))/2) + "px")
+          .style("top", (d3.event.pageY - 125) + "px");
       })
       .on("mouseout", function(d) {
         tip.transition()

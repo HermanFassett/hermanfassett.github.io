@@ -22,8 +22,9 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var tip = d3.tip().attr('class', 'd3-tip');
-svg.call(tip);
+  var tip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 // load data
 d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json", function(error, data) {
 
@@ -71,14 +72,19 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         return d.Name;
       })
       .on("mouseover", function(d) {
+        tip.transition()
+          .duration(100)
+          .style("opacity", 1);
         tip.html(d.Name + ": " + d.Nationality + "<br>" +
                  "Year: " + d.Year + ", Time: " + d.Time + "<br>" +
-                 "Doping: " + (d.Doping == "" ? "N/A" : d.Doping)
-                );
-        tip.show();
+                 "Doping: " + (d.Doping == "" ? "N/A" : d.Doping))
+          .style("left", (d3.event.pageX - parseInt(tip.style("width"))/2) + "px")
+          .style("top", (d3.event.pageY - 125) + "px");
       })
       .on("mouseout", function(d) {
-        tip.hide()
+        tip.transition()
+          .duration(500)
+          .style("opacity", 0);
       });
 
   svg.selectAll(".text")

@@ -95,21 +95,21 @@ d3.json("http://www.freecodecamp.com/news/hot", function(error, data) {
     .attr("class", "node")
     .call(force.drag)
     .on("mouseover", function(d) {
-      tip.transition()
-        .duration(200)
-        .style("opacity", 1);
+      tip.style("opacity", 1);
       tip.html(d.name)
-        .style("left", (d3.event.pageX) + "px")
-        .style("top", (d3.event.pageY - 30) + "px");
+        .style("left", (d3.event.pageX - 50) + "px")
+        .style("top", (d3.event.pageY - 50) + "px");
     })
     .on("mouseout", function(d) {
       tip.transition()
-        .duration(500)
+        .duration(100)
         .style("opacity", 0);
     });
   // Get image and set as pattern
   node.append("pattern")
-    .attr("id", "image")
+    .attr("id", function(d) {
+      return d.name;
+    })
     .attr('patternUnits', 'userSpaceOnUse')
     .attr("x", function(d) {
       return -((d.weight * 1.6) + 5);
@@ -139,7 +139,7 @@ d3.json("http://www.freecodecamp.com/news/hot", function(error, data) {
       return ((d.weight * 1.6) + 5);
     })
     .style("fill", function(d) {
-      return d.rank ? color(d3.max(d.rank)) : "url(#image)"; // Image or color
+      return d.rank ? color(d3.max(d.rank)) : "url(#"+d.name+")"; // Image or color
     });
 
   // Tick function

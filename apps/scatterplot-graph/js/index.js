@@ -83,7 +83,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
       })
       .on("mouseout", function(d) {
         tip.transition()
-          .duration(500)
+          .duration(200)
           .style("opacity", 0);
       });
 

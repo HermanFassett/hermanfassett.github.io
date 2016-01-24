@@ -378,7 +378,7 @@ function check(col, row) {
   return !(PROPS.hasOwnProperty(col + "," + row) && (PROPS[col + "," + row].type === "enemy" || PROPS[col + "," + row].type === "boss")) && !(MAP[row][col] === 0);
 }
 function updateHealth() {
-  if (PLAYER.health < 0) {
+  if (PLAYER.health <= 0) {
     PLAYER.lives--;
     if (PLAYER.lives < 0) {
       message("Game Over!");

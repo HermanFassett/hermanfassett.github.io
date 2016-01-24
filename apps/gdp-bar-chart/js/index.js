@@ -53,8 +53,9 @@ function InitChart() {
       .attr("dy", "1em")
       .text("Gross Domestic Product, USA");
 
-    var tip = d3.tip().attr('class', 'd3-tip');
-    viz.call(tip)
+    var tip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
     viz.selectAll(".bar")
       .data(data)
@@ -77,15 +78,21 @@ function InitChart() {
         var recDate = new Date(d[0]);
         var year = recDate.getFullYear();
         var month = recDate.getMonth();
+        tip.transition()
+          .duration(100)
+          .style("opacity", 1);
         tip.html(function() {
           return moneyFormat(money) + "<br>" + year + " - " + months[month];
-        })
-        tip.show();
+          })
+          .style("left", (d3.event.pageX - parseInt(tip.style("width"))/2) + "px")
+          .style("top", (d3.event.pageY - 100) + "px");
       })
       .on("mouseleave", function() {
         var rec = d3.select(this);
         rec.attr("class", "leave");
-        tip.hide();
+        tip.transition()
+          .duration(100)
+          .style("opacity", 0);
     })
 
   });

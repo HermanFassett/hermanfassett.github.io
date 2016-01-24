@@ -58,8 +58,8 @@ function start() {
   for (var i = 0; i < ROOMS; i++) {
     var room = lastroom ? getRoom() : getRoom(2, 2);
     if (lastroom) {
-      var cdir = room.col > lastroom.col ? -1 : 1;
-      var rdir = room.row > lastroom.row ? -1 : 1;
+      var cdir = room.col >= lastroom.col ? -1 : 1;
+      var rdir = room.row >= lastroom.row ? -1 : 1;
       var nc = cdir === -1 ? room.col : room.col + room.h - 1;
       var nr = rdir === -1 ? room.row : room.row + room.w - 1;
       while (cdir === -1 && nc >= lastroom.col || cdir === 1 && nc <= lastroom.col) {

@@ -1,0 +1,6 @@
+[submodule "apps/rubber-duck/rubber-duck"]
+	path = apps/rubber-duck/rubber-duck
+	url = https://github.com/HermanFassett/rubber-duck.git
+[submodule "apps/--force"]
+	path = apps/--force
+	url = https://github.com/HermanFassett/rubber-duck.git

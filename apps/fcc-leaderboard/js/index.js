@@ -26,7 +26,7 @@ var Head = React.createClass({
     return React.createElement(
       "header",
       { className: "head" },
-      "This score is calculated as Points + (Basejumps * 60) + (Ziplines * 30) + (Bonfires * 3)."
+      "This score is calculated as Points + (projects * 50) + (algorithms * 5)"
     );
   }
 });
